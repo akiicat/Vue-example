@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
-    <router-link :to="{path: '/hello'}">Hello</router-link>
-    <router-link :to="{name: 'c2f'}">CtoF</router-link>
-
-    <img src="./assets/logo.png">
+  <div class="container">
+    <div class="my-nav">
+      <router-link :to="{path: '/hello'}">Hello</router-link>
+      <router-link :to="{name: 'c2f'}">CtoF</router-link>
+      <router-link :to="{name: 'learnComponent'}">learnComponent</router-link>
+    </div>
 
     <router-view></router-view>
   </div>
@@ -11,17 +12,17 @@
 
 <script>
 export default {
-  name: 'app'
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.my-nav {
+  position: fixed;
+  top: 60px;
+  padding: 0 10px;
+}
+.container {
+  display: block;
+  margin-bottom: 10px;
 }
 </style>
