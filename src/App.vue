@@ -1,6 +1,10 @@
 <template>
   <div id="app">
+    <router-link :to="{path: '/hello'}">Hello</router-link>
+    <router-link :to="{name: 'c2f'}">CtoF</router-link>
+
     <img src="./assets/logo.png">
+
     <router-view></router-view>
   </div>
 </template>
