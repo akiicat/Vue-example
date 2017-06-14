@@ -5,6 +5,7 @@
       <router-link :to="{name: 'c2f'}">CtoF</router-link>
       <router-link :to="{name: 'learnComponent'}">learnComponent</router-link>
       <router-link :to="{name: 'count'}">Count</router-link>
+      <router-link :to="{name: 'todo'}">Todo</router-link>
     </div>
     <router-view></router-view>
   </div>
@@ -19,6 +20,7 @@ export default {
 .my-nav {
   position: fixed;
   top: 60px;
+  right: 60px;
   padding: 0 10px;
 }
 .container {

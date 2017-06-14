@@ -15,3 +15,8 @@ export const actionCountReset = ({ commit }) => {
   console.log('actionCountReset')
   commit(types.COUNT_RESET)
 }
+
+export const addTodo = ({ commit }, newTodo) => {
+  console.log('add new todo', newTodo)
+  commit(types.ADD_TODO, newTodo)
+}
