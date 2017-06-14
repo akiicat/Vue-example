@@ -20,3 +20,13 @@ export const addTodo = ({ commit }, newTodo) => {
   console.log('add new todo', newTodo)
   commit(types.ADD_TODO, newTodo)
 }
+
+export const toggleTodo = ({ commit }, key) => {
+  console.log('toggle todo', key)
+  commit(types.TOGGLE_TODO, key)
+}
+
+export const deleteTodo = ({ commit }, key) => {
+  console.log('delete todo', key)
+  commit(types.DELETE_TODO, key)
+}

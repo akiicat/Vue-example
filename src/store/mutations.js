@@ -35,5 +35,19 @@ export const mutations = {
       done: false
     })
     todoKey++
+  },
+  [types.TOGGLE_TODO] (state, key) {
+    state.todos.forEach(item => {
+      if (item.key === key) {
+        item.done = !item.done
+      }
+    })
+  },
+  [types.DELETE_TODO] (state, key) {
+    state.todos.forEach((item, index) => {
+      if (item.key === key) {
+        state.todos.splice(index, 1)
+      }
+    })
   }
 }
