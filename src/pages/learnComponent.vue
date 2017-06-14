@@ -1,6 +1,12 @@
 <template>
   <div>
-    <navbar></navbar>
+    <navbar>
+      <div slot="right">
+        <input type="text" placeholder="Email" class="form-control mr-sm-2">
+        <input type="password" placeholder="Password" class="form-control mr-sm-2">
+        <button type="submit" class="btn btn-success my-2 my-sm-0">Sign in</button>
+      </div>
+    </navbar>
     <jumbotron></jumbotron>
     <container :list="list"></container>
   </div>
