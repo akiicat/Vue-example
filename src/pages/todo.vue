@@ -19,26 +19,9 @@
     <div class="row">
       <div class="col-md-6">
         <h2>Todo List:</h2>
-        <li v-for="(item, index) in todoList">
-          <label>
-            <!--
-              改變狀態
-              套用 vuex 因此不能使用 v-model 做雙向綁定，會報錯誤
-              1. 將 list 的 value bind 到 input checked 屬性上，改變樣式。
-              2. onchange 事件發出 action 帶入 key
-             -->
-            <input
-              type="checkbox"
-              :checked="item.done"
-              @change="toggleTodo( item.key )">
-              {{ item.content }}
-          </label>
-          <!--
-			刪除按鈕
-			onclick 事件發出 action 帶入 key
-		  -->
-          <button class="btn btn-xs btn-danger" @click="deleteTodo( item.key )">x</button>
-        </li>
+        <ul>
+          <todo-item v-for="(item, index) in todoList" :item="item"/>
+        </ul>
       </div>
       <div class="col-md-6">
         <h2>Done List:</h2>
@@ -49,7 +32,7 @@
                 type="checkbox"
                 :checked="item.done"
                 @change="toggleTodo( item.key )">
-                {{ item.content }}
+              {{ item.content }}
             </label>
           </li>
         </ul>
@@ -60,6 +43,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import todoItem from '../components/todo-item.vue'
 
 export default {
   data: function () {
@@ -74,13 +58,16 @@ export default {
   methods: {
     ...mapActions([
       'addTodo',
-      'toggleTodo',
-      'deleteTodo'
+      'toggleTodo'
     ]),
     actionAddTodo () {
+      debugger
       this.$store.dispatch('addTodo', this.newTodo)
       this.newTodo = ''
     }
+  },
+  components: {
+    todoItem
   }
 }
 </script>

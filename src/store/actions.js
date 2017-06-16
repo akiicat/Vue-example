@@ -30,3 +30,8 @@ export const deleteTodo = ({ commit }, key) => {
   console.log('delete todo', key)
   commit(types.DELETE_TODO, key)
 }
+
+export const updateTodo = ({ commit }, obj) => {
+  console.log('updateTodo', obj)
+  commit(types.UPDATE_TODO, obj)
+}

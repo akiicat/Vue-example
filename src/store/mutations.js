@@ -43,6 +43,15 @@ export const mutations = {
       }
     })
   },
+  [types.UPDATE_TODO] (state, obj) {
+    state.todos.forEach((item, index) => {
+      if (item.key === obj.key) {
+        console.log('UPDATE_TODO:', item.content, ' to →', obj.change)
+        // 找到 todo 更新 content
+        state.todos[index].content = obj.change
+      }
+    })
+  },
   [types.DELETE_TODO] (state, key) {
     state.todos.forEach((item, index) => {
       if (item.key === key) {
