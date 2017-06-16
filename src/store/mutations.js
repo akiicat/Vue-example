@@ -36,10 +36,10 @@ export const mutations = {
     })
     todoKey++
   },
-  [types.TOGGLE_TODO] (state, key) {
+  [types.TOGGLE_TODO] (state, obj) {
     state.todos.forEach(item => {
-      if (item.key === key) {
-        item.done = !item.done
+      if (item.key === obj.key) {
+        item.done = obj.checked
       }
     })
   },

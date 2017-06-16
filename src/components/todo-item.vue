@@ -1,13 +1,7 @@
 <template>
   <li>
     <div v-if="!updateMode">
-      <label>
-        <input
-          type="checkbox"
-          :checked="item.done"
-          @change="toggleTodo( item.key )">
-        {{ item.content }}
-      </label>
+      <custom-checkbox :item="item" @toggleTodo="toggleTodo" />
       <!-- 新增切換修改按鈕 -->
       <button class="btn btn-xs btn-primary" @click="showEditMode">
         edit
@@ -32,6 +26,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import customCheckbox from './custom-checkbox.vue'
 
 export default {
   props: {
@@ -80,6 +75,9 @@ export default {
       e.target.value = this.item.title
       this.updateMode = false
     }
+  },
+  components: {
+    customCheckbox
   }
 }
 </script>
