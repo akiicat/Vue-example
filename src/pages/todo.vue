@@ -32,6 +32,7 @@
         </ul>
       </div>
     </div><!-- end row -->
+    <pre>{{ todoList }}</pre>
   </div>
 </template>
 
