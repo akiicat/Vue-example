@@ -1,3 +1,10 @@
-export const getCount = state => state.count
-export const getTodos = state => state.todos.filter(item => !item.done)
-export const getDones = state => state.todos.filter(item => item.done)
+// get count & todo
+export const getCountandTodo = state => {
+  return {
+    count: state.count.count,
+    todo: state.todo.todos
+  }
+}
+
+// just return all state
+export const getAllstate = state => state

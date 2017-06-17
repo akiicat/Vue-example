@@ -56,7 +56,6 @@ export default {
       'toggleTodo'
     ]),
     actionAddTodo () {
-      debugger
       this.$store.dispatch('addTodo', this.newTodo)
       this.newTodo = ''
     }

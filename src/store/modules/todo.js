@@ -1,8 +1,13 @@
-import * as types from './mutations_type.js'
+// types
+const types = {
+  ADD_TODO: 'ADD_TODO',
+  TOGGLE_TODO: 'TOGGLE_TODO',
+  DELETE_TODO: 'DELETE_TODO',
+  UPDATE_TODO: 'UPDATE_TODO'
+}
 
 // state
-export const state = {
-  count: 0,
+const state = {
   todos: [
     { key: 0, content: 'vue.js 2.0', done: true },
     { key: 1, content: 'vuex 2.0', done: false },
@@ -12,22 +17,37 @@ export const state = {
   ]
 }
 
+// getters
+const getters = {
+  getTodos: state => state.todos.filter(item => !item.done),
+  getDones: state => state.todos.filter(item => item.done)
+}
+
+// actions
+const actions = {
+  addTodo ({ commit }, newTodo) {
+    console.log('add new todo', newTodo)
+    commit(types.ADD_TODO, newTodo)
+  },
+  toggleTodo ({ commit }, obj) {
+    console.log('toggle todo', obj)
+    commit(types.TOGGLE_TODO, obj)
+  },
+  deleteTodo ({ commit }, key) {
+    console.log('delete todo', key)
+    commit(types.DELETE_TODO, key)
+  },
+  updateTodo ({ commit }, obj) {
+    console.log('updateTodo', obj)
+    commit(types.UPDATE_TODO, obj)
+  }
+}
+
+// mutations
 let todoKey = state.todos.length
 
 // mutations
-export const mutations = {
-  [types.INCREASE] (state, num) {
-    state.count += parseInt(num)
-    console.log('INCREASE', num, 'state?', state.count)
-  },
-  [types.DECREASE] (state, num) {
-    state.count -= parseInt(num)
-    console.log('DECREASE', num, 'state?', state.count)
-  },
-  [types.COUNT_RESET] (state) {
-    state.count = 0
-    console.log('COUNT_RESET - state?', state.count)
-  },
+const mutations = {
   [types.ADD_TODO] (state, newTodo) {
     state.todos.push({
       key: todoKey,
@@ -47,7 +67,6 @@ export const mutations = {
     state.todos.forEach((item, index) => {
       if (item.key === obj.key) {
         console.log('UPDATE_TODO:', item.content, ' to →', obj.change)
-        // 找到 todo 更新 content
         state.todos[index].content = obj.change
       }
     })
@@ -59,4 +78,11 @@ export const mutations = {
       }
     })
   }
+}
+
+export default {
+  state,
+  getters,
+  actions,
+  mutations
 }
