@@ -1,27 +1,41 @@
 <template>
   <div>
-    <div class="my-nav">
-      <router-link :to="{path: '/hello'}">Hello</router-link>
-      <router-link :to="{name: 'c2f'}">CtoF</router-link>
-      <router-link :to="{name: 'learnComponent'}">learnComponent</router-link>
-      <router-link :to="{name: 'count'}">Count</router-link>
-      <router-link :to="{name: 'todo'}">Todo</router-link>
+    <navbar>
+      <div slot="right">
+        <input type="text" placeholder="Email" class="form-control mr-sm-2">
+        <input type="password" placeholder="Password" class="form-control mr-sm-2">
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Sign in</button>
+      </div>
+    </navbar>
+    <div class="view">
+      <router-view></router-view>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Navbar from './components/navbar.vue'
+
 export default {
+  components: {
+    Navbar
+  }
 }
 </script>
 
 <style>
-.my-nav {
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav {
   position: fixed;
-  top: 60px;
-  right: 60px;
+  top: 0px;
   padding: 0 10px;
+}
+.view {
+  position: relative;
 }
 .container {
   display: block;

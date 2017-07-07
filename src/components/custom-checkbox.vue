@@ -1,13 +1,15 @@
 <template>
-  <div class="squaredFour">
-    <input
-      type="checkbox"
-      :id="getID"
-      :checked="item.done"
-      @change="handleChange" />
-    <label :for="getID" class="checkbox-icon"></label>
+  <span>
+    <span class="squaredFour">
+      <input
+        type="checkbox"
+        :id="getID"
+        :checked="item.done"
+        @change="handleChange" />
+      <label :for="getID" class="checkbox-icon"></label>
+    </span>
     <label :for="getID">{{ item.content }}</label>
-  </div>
+  </span>
 </template>
 
 <script>
@@ -30,3 +32,5 @@ export default {
   }
 }
 </script>
+
+<style src="../../static/css/squared-button.css"></style>

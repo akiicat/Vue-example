@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello container">
     <h1>{{ msg }}</h1>
     <h2>{{ hello }}</h2>
     <h2>{{ hello + ' and Ironman 2017' }}</h2>

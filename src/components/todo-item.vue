@@ -1,13 +1,13 @@
 <template>
   <li>
-    <div v-if="!updateMode">
+    <div v-if="!updateMode" class="list">
       <custom-checkbox :item="item" @toggleTodo="toggleTodo" />
       <!-- 新增切換修改按鈕 -->
-      <button class="btn btn-xs btn-primary" @click="showEditMode">
-        edit
-      </button>
       <button class="btn btn-xs btn-danger" @click="deleteTodo( item.key )">
         x
+      </button>
+      <button class="btn btn-xs btn-primary" @click="showEditMode">
+        edit
       </button>
     </div>
 
@@ -85,5 +85,11 @@ export default {
 <style>
 .edit-input{
   line-height: 1em
+}
+.list {
+  height: 48px;
+}
+.list button {
+  float: right;
 }
 </style>

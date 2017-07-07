@@ -1,19 +1,11 @@
 <template>
   <div>
-    <navbar>
-      <div slot="right">
-        <input type="text" placeholder="Email" class="form-control mr-sm-2">
-        <input type="password" placeholder="Password" class="form-control mr-sm-2">
-        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Sign in</button>
-      </div>
-    </navbar>
     <jumbotron></jumbotron>
     <container :list="list"></container>
   </div>
 </template>
 
 <script>
-import Navbar from '../components/navbar.vue'
 import Jumbotron from '../components/jumbotron.vue'
 import Container from '../components/container.vue'
 
@@ -40,7 +32,6 @@ export default {
     }
   },
   components: {
-    Navbar,
     Jumbotron,
     Container
   }
