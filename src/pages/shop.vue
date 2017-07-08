@@ -60,9 +60,13 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: mapGetters({
     foodList: 'getProducts',
-    cartTotal: 'getShoppingCartTotal'
+    cartTotal: 'getShoppingCartTotal',
+    cartList: 'getShoppingCart',
+    total: 'getCartPriceTotal',
+    recommend: 'getRecommendedProducts'
   }),
   methods: mapActions([
+    'cancelCart',
     'addCart'
   ])
 }
