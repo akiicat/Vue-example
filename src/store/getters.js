@@ -8,3 +8,4 @@ export const getCountandTodo = state => {
 
 // just return all state
 export const getAllstate = state => state
+export const getLoading = state => state.loading
