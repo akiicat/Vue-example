@@ -8,6 +8,7 @@ import Todo from '@/pages/todo'
 import Shop from '@/pages/shop'
 import Cart from '@/pages/cart'
 import Open1999 from '@/pages/open1999'
+import Login from '@/pages/login'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/open1999',
       name: 'open1999',
       component: Open1999
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/*',
