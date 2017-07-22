@@ -17,42 +17,50 @@ export default new Router({
     {
       path: '/hello',
       name: 'hello',
-      component: Hello
+      component: Hello,
+      meta: { requiresAuth: true }
     },
     {
       path: '/c2f',
       name: 'c2f',
-      component: CtoF
+      component: CtoF,
+      meta: { requiresAuth: true }
     },
     {
       path: '/learnComponent',
       name: 'learnComponent',
-      component: learnComponent
+      component: learnComponent,
+      meta: { requiresAuth: true }
     },
     {
       path: '/count',
       name: 'count',
-      component: Count
+      component: Count,
+      meta: { requiresAuth: true }
     },
     {
       path: '/todo',
       name: 'todo',
-      component: Todo
+      component: Todo,
+      meta: { requiresAuth: true }
     },
     {
       path: '/shop',
       name: 'shop',
-      component: Shop
+      component: Shop,
+      meta: { requiresAuth: true }
     },
     {
       path: '/cart',
       name: 'cart',
-      component: Cart
+      component: Cart,
+      meta: { requiresAuth: true }
     },
     {
       path: '/open1999',
       name: 'open1999',
-      component: Open1999
+      component: Open1999,
+      meta: { requiresAuth: true }
     },
     {
       path: '/login',

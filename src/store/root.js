@@ -1,7 +1,8 @@
 import * as types from './mutations_types.js'
 
 export const state = {
-  loading: false
+  loading: false,
+  token: ''
 }
 
 export const actions = {
@@ -18,6 +19,7 @@ export const actions = {
       setTimeout(() => {
         if (email === 'vue_vuex2@ironman2017.tw' && password === '123') {
           console.log('2. Promise resolve')
+          commit(types.TOKEN, '3345678') // success 儲存 token
           commit(types.LOADING, false) // 關閉遮罩
           resolve() // resolve 結果會在 then 裡面收到
         } else { // error
@@ -32,5 +34,8 @@ export const actions = {
 export const mutations = {
   [types.LOADING] (state, isLoading) {
     state.loading = isLoading
+  },
+  [types.TOKEN] (state, token) {
+    state.token = token
   }
 }
